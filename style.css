@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: tahoma, Arial, sans-serif;
+}
+
+.slider-container {
+  margin: 10px auto;
+  width: 95%;
+  height: 100vh;
+  position: relative;
+  background-color: black;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 92%;
+  object-fit: contain;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slider-container img.active {
+  opacity: 1;
+}
+
+.slider-container .slide-number {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  font-size: 25px;
+  z-index: 2;
+  border-radius: 6px;
+}
+
+.slider-controls {
+  width: 100%;
+  height: 8%;
+  background-color: white;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.slider-controls .indicators ul {
+  list-style: none;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  gap: 5px;
+}
+
+.slider-controls .indicators ul li {
+  background-color: #f6f6f6;
+  color: #333;
+  font-weight: bold;
+  height: 28px;
+  width: 28px;
+  border-radius: 4px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.slider-controls .indicators ul li.active {
+  background-color: #009688;
+  color: white;
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+  background-color: #009688;
+  color: #ffff;
+  font-size: 27px;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px;
+  user-select: none;
+}
+
+.slider-controls .prev.disabled,
+.slider-controls .next.disabled {
+  background-color: rgba(0, 150, 136, 0.5);
+  cursor: no-drop;
+}
